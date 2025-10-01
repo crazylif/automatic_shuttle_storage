@@ -57,8 +57,8 @@
         "topic": "msg1",
         "topicType": "str",
         "className": "",
-        "x": 590,
-        "y": 320,
+        "x": 310,
+        "y": 440,
         "wires": [
             [
                 "4df513d10049854c",
@@ -73,26 +73,56 @@
         "z": "2bf117dae05b2643",
         "group": "ad78c0eba9c199b6",
         "name": "",
-        "order": 2,
-        "width": 10,
-        "height": 6,
+        "order": 4,
+        "width": 11,
+        "height": 5,
         "columns": [
             {
                 "field": "box_number",
                 "title": "box_number",
                 "width": "",
                 "align": "left",
-                "formatter": "rownum",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
             },
             {
-                "field": "status",
-                "title": "Status",
+                "field": "box_detail",
+                "title": "box_detail",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "existence_of_box",
+                "title": "existence_of_box",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "box_status",
+                "title": "box_status",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "color",
+                "title": "traffic",
+                "width": "",
+                "align": "left",
+                "formatter": "color",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -100,8 +130,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 570,
-        "y": 120,
+        "x": 1610,
+        "y": 160,
         "wires": []
     },
     {
@@ -121,32 +151,9 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 600,
-        "y": 80,
+        "x": 1640,
+        "y": 60,
         "wires": []
-    },
-    {
-        "id": "5c6be236ecf7ce30",
-        "type": "inject",
-        "z": "2bf117dae05b2643",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[{\"box_number\":1,\"status\":\"have\"}]",
-        "payloadType": "json",
-        "x": 210,
-        "y": 560,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "c5974b415b7eaa52",
@@ -161,8 +168,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 360,
-        "y": 80,
+        "x": 1440,
+        "y": 60,
         "wires": [
             [
                 "345a0aa82b5b9726"
@@ -175,20 +182,17 @@
         "z": "2bf117dae05b2643",
         "name": "",
         "topic": "information",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto-detect",
         "broker": "8cbe99044b964c1e",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 340,
-        "y": 120,
+        "x": 320,
+        "y": 200,
         "wires": [
-            [
-                "58142c51a0d7d196",
-                "4fb91678ebfec054"
-            ]
+            []
         ]
     },
     {
@@ -205,8 +209,8 @@
         "correl": "",
         "expiry": "",
         "broker": "8cbe99044b964c1e",
-        "x": 990,
-        "y": 260,
+        "x": 1610,
+        "y": 460,
         "wires": []
     },
     {
@@ -214,7 +218,7 @@
         "type": "mqtt out",
         "z": "2bf117dae05b2643",
         "name": "",
-        "topic": "type",
+        "topic": "task_type",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -223,8 +227,8 @@
         "correl": "",
         "expiry": "",
         "broker": "8cbe99044b964c1e",
-        "x": 970,
-        "y": 400,
+        "x": 1760,
+        "y": 580,
         "wires": []
     },
     {
@@ -239,24 +243,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "4fb91678ebfec054",
-        "type": "debug",
-        "z": "2bf117dae05b2643",
-        "name": "debug 29",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 200,
+        "x": 320,
+        "y": 380,
         "wires": []
     },
     {
@@ -270,8 +258,8 @@
         "syntax": "mustache",
         "template": "box number: {{payload.msg1}}  task: {{payload.msg2}}",
         "output": "str",
-        "x": 900,
-        "y": 720,
+        "x": 1060,
+        "y": 680,
         "wires": [
             [
                 "b9ab3444319eece3"
@@ -293,8 +281,8 @@
         "className": "",
         "topic": "conf",
         "name": "",
-        "x": 1110,
-        "y": 720,
+        "x": 1230,
+        "y": 680,
         "wires": [
             [
                 "077834790672e9eb",
@@ -319,8 +307,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 570,
-        "y": 540,
+        "x": 350,
+        "y": 680,
         "wires": []
     },
     {
@@ -328,7 +316,7 @@
         "type": "ui_text",
         "z": "2bf117dae05b2643",
         "group": "ad78c0eba9c199b6",
-        "order": 17,
+        "order": 15,
         "width": 4,
         "height": 1,
         "name": "",
@@ -340,8 +328,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 770,
-        "y": 540,
+        "x": 530,
+        "y": 680,
         "wires": []
     },
     {
@@ -350,7 +338,7 @@
         "z": "2bf117dae05b2643",
         "name": "",
         "group": "ad78c0eba9c199b6",
-        "order": 14,
+        "order": 12,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -364,8 +352,8 @@
         "payloadType": "str",
         "topic": "msg2",
         "topicType": "str",
-        "x": 590,
-        "y": 400,
+        "x": 330,
+        "y": 540,
         "wires": [
             [
                 "55c8e1e7e2d3a78d",
@@ -379,7 +367,7 @@
         "z": "2bf117dae05b2643",
         "name": "",
         "group": "ad78c0eba9c199b6",
-        "order": 12,
+        "order": 14,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -393,8 +381,8 @@
         "payloadType": "str",
         "topic": "msg2",
         "topicType": "str",
-        "x": 750,
-        "y": 400,
+        "x": 490,
+        "y": 540,
         "wires": [
             [
                 "55c8e1e7e2d3a78d",
@@ -414,8 +402,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 720,
+        "x": 870,
+        "y": 680,
         "wires": [
             [
                 "5ab34f864c1defc6",
@@ -480,8 +468,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 820,
+        "x": 880,
+        "y": 740,
         "wires": []
     },
     {
@@ -490,7 +478,7 @@
         "z": "2bf117dae05b2643",
         "name": "",
         "group": "ad78c0eba9c199b6",
-        "order": 18,
+        "order": 17,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -504,8 +492,8 @@
         "payloadType": "bool",
         "topic": "button",
         "topicType": "str",
-        "x": 510,
-        "y": 720,
+        "x": 690,
+        "y": 680,
         "wires": [
             [
                 "20635778ecbf6fe0"
@@ -517,18 +505,20 @@
         "type": "function",
         "z": "2bf117dae05b2643",
         "name": "function 22",
-        "func": "let message = context.get(\"message\");\n// let message = msg.payload;\nlet conf = context.get(\"conf\");\n\nif (msg.topic === \"message\") {\n    message = msg.payload;\n    context.set(\"message\", message);\n}\nelse if (msg.topic === \"conf\") {\n    conf = msg.payload;\n    context.set(\"conf\", conf);\n}\n\n// Only send when both available\nif (conf === \"OK\" && message !== null) {\n    context.set(\"conf\", null);     // reset if needed\n    // context.set(\"message\", null);\n    return { payload: message };   // ✅ send as message\n}\n\nreturn null;\n",
+        "func": "let message = context.get(\"message\");\n// let message = msg.payload;\nlet conf = context.get(\"conf\");\n\nif (msg.topic === \"message\") {\n    message = msg.payload;\n    context.set(\"message\", message);\n}\nelse if (msg.topic === \"conf\") {\n    conf = msg.payload;\n    context.set(\"conf\", conf);\n}\n\n// Only send when both available\nif (conf === \"OK\" && message !== null) {\n    context.set(\"conf\", null);     // reset if needed\n    // context.set(\"message\", null);\n    msg.topic = \"message\";\n    return { payload: message };   // ✅ send as message\n}\n\nreturn null;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1090,
-        "y": 600,
+        "x": 1170,
+        "y": 580,
         "wires": [
             [
-                "3ac51a10db5e754b"
+                "3ac51a10db5e754b",
+                "c8b7e4523a1cd8d9",
+                "6a21248cb16676ae"
             ]
         ]
     },
@@ -544,8 +534,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1390,
-        "y": 560,
+        "x": 1180,
+        "y": 520,
         "wires": []
     },
     {
@@ -560,72 +550,418 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1250,
-        "y": 780,
+        "x": 1240,
+        "y": 740,
         "wires": []
     },
     {
-        "id": "fb14110341c5dda9",
+        "id": "c8b7e4523a1cd8d9",
+        "type": "function",
+        "z": "2bf117dae05b2643",
+        "name": "function 23",
+        "func": "if (msg.payload && msg.payload.msg1 !== undefined) {\n    return {\n        topic: \"box_number\",\n        payload: msg.payload.msg1\n    };\n}\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 460,
+        "wires": [
+            [
+                "f1b01ad4bfaaa519",
+                "f632798495d39b81"
+            ]
+        ]
+    },
+    {
+        "id": "f1b01ad4bfaaa519",
+        "type": "debug",
+        "z": "2bf117dae05b2643",
+        "name": "debug 36",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6a21248cb16676ae",
+        "type": "function",
+        "z": "2bf117dae05b2643",
+        "name": "function 24",
+        "func": "if (msg.payload && msg.payload.msg2 !== undefined) {\n    return {\n        topic: \"task_type\",\n        payload: msg.payload.msg2\n    };\n}\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 580,
+        "wires": [
+            [
+                "f0433c4e31af725d"
+            ]
+        ]
+    },
+    {
+        "id": "17bb936ba27421f5",
+        "type": "debug",
+        "z": "2bf117dae05b2643",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "f0433c4e31af725d",
+        "type": "delay",
+        "z": "2bf117dae05b2643",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1560,
+        "y": 580,
+        "wires": [
+            [
+                "bb6b430141509ae2",
+                "17bb936ba27421f5"
+            ]
+        ]
+    },
+    {
+        "id": "fd563948413c4560",
+        "type": "ui_table",
+        "z": "2bf117dae05b2643",
+        "group": "ad78c0eba9c199b6",
+        "name": "history",
+        "order": 7,
+        "width": 11,
+        "height": 3,
+        "columns": [
+            {
+                "field": "id",
+                "title": "id",
+                "width": "",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "timestamp",
+                "title": "timestamp",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "box_number",
+                "title": "box_number",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "existence_of_box",
+                "title": "existence_of_box",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status",
+                "title": "status",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1610,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "15a8989bbd58a661",
+        "type": "mysql",
+        "z": "2bf117dae05b2643",
+        "mydb": "d3c942ca9526c137",
+        "name": "storage",
+        "x": 780,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d0313bda0f09640",
+        "type": "function",
+        "z": "2bf117dae05b2643",
+        "name": "function 25",
+        "func": "let data = msg.payload;\n\n// Escape single quotes in status to avoid SQL errors\nlet status = String(data.status).replace(/'/g, \"''\");\n\nlet sql = `\nINSERT INTO boxes_history (timestamp, box_number, existence_of_box, status)\nVALUES (NOW(), ${data.box_number}, ${data.existence_of_box}, '${status}');\n`;\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "15a8989bbd58a661"
+            ]
+        ]
+    },
+    {
+        "id": "2ed759f87b0c6b6a",
+        "type": "inject",
+        "z": "2bf117dae05b2643",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"box_number\":10,\"existence_of_box\":true,\"status\":\"active\"}",
+        "payloadType": "json",
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "8d0313bda0f09640"
+            ]
+        ]
+    },
+    {
+        "id": "e94446416c51675b",
+        "type": "mysql",
+        "z": "2bf117dae05b2643",
+        "mydb": "d3c942ca9526c137",
+        "name": "storage",
+        "x": 1420,
+        "y": 260,
+        "wires": [
+            [
+                "fd563948413c4560"
+            ]
+        ]
+    },
+    {
+        "id": "cd7253fee3bc7e53",
+        "type": "function",
+        "z": "2bf117dae05b2643",
+        "name": "function 26",
+        "func": "let data = msg.payload;\n\n// Escape single quotes in status to avoid SQL errors\nlet status = String(data.status).replace(/'/g, \"''\");\n\nlet sql = \n`SELECT * FROM \\`boxes_history\\``\n;\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 260,
+        "wires": [
+            [
+                "e94446416c51675b"
+            ]
+        ]
+    },
+    {
+        "id": "33834f464e348455",
+        "type": "inject",
+        "z": "2bf117dae05b2643",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1020,
+        "y": 260,
+        "wires": [
+            [
+                "cd7253fee3bc7e53",
+                "5d30c37d212e5a52"
+            ]
+        ]
+    },
+    {
+        "id": "a7b9a478bbf2f173",
+        "type": "ui_text",
+        "z": "2bf117dae05b2643",
+        "group": "ad78c0eba9c199b6",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "History",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "df23219b44bbdf1c",
+        "type": "ui_text",
+        "z": "2bf117dae05b2643",
+        "group": "ad78c0eba9c199b6",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Boxes",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1610,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f55c22ae01023d2f",
+        "type": "mysql",
+        "z": "2bf117dae05b2643",
+        "mydb": "d3c942ca9526c137",
+        "name": "storage",
+        "x": 1420,
+        "y": 160,
+        "wires": [
+            [
+                "58142c51a0d7d196"
+            ]
+        ]
+    },
+    {
+        "id": "5d30c37d212e5a52",
+        "type": "function",
+        "z": "2bf117dae05b2643",
+        "name": "function 27",
+        "func": "let data = msg.payload;\n\n// Escape single quotes in status to avoid SQL errors\nlet status = String(data.status).replace(/'/g, \"''\");\n\nlet sql = \n`SELECT * FROM \\`boxes\\``\n;\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 160,
+        "wires": [
+            [
+                "f55c22ae01023d2f"
+            ]
+        ]
+    },
+    {
+        "id": "1a3721d9c032bcc0",
+        "type": "mysql",
+        "z": "2bf117dae05b2643",
+        "mydb": "d3c942ca9526c137",
+        "name": "storage",
+        "x": 780,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1063f8743369b449",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
         "group": "ad78c0eba9c199b6",
         "order": 3,
-        "width": 1,
+        "width": 5,
         "height": 1
     },
     {
-        "id": "10083f2c896a5eb0",
-        "type": "ui_spacer",
-        "z": "2bf117dae05b2643",
-        "name": "spacer",
-        "group": "ad78c0eba9c199b6",
-        "order": 4,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "41445073581ac9da",
-        "type": "ui_spacer",
-        "z": "2bf117dae05b2643",
-        "name": "spacer",
-        "group": "ad78c0eba9c199b6",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "1ca5f11da0803288",
+        "id": "3b48f5acc98e2899",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
         "group": "ad78c0eba9c199b6",
         "order": 6,
-        "width": 1,
+        "width": 5,
         "height": 1
     },
     {
-        "id": "8111cbd1bdb9509f",
-        "type": "ui_spacer",
-        "z": "2bf117dae05b2643",
-        "name": "spacer",
-        "group": "ad78c0eba9c199b6",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "eb58219f756fb581",
+        "id": "c19bf9da7a677522",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
         "group": "ad78c0eba9c199b6",
         "order": 8,
-        "width": 1,
+        "width": 11,
         "height": 1
     },
     {
-        "id": "b128f974a8ad1fa7",
+        "id": "53e71f9b85a7803d",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
@@ -635,7 +971,7 @@
         "height": 1
     },
     {
-        "id": "bdd7bf0e13edeab4",
+        "id": "58b25a8cf2fa0c98",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
@@ -645,23 +981,13 @@
         "height": 1
     },
     {
-        "id": "5074aa23239fc0ca",
+        "id": "7bbcef19de819125",
         "type": "ui_spacer",
         "z": "2bf117dae05b2643",
         "name": "spacer",
         "group": "ad78c0eba9c199b6",
         "order": 13,
         "width": 1,
-        "height": 1
-    },
-    {
-        "id": "4c20772fe30d5955",
-        "type": "ui_spacer",
-        "z": "2bf117dae05b2643",
-        "name": "spacer",
-        "group": "ad78c0eba9c199b6",
-        "order": 15,
-        "width": 11,
         "height": 1
     },
     {
@@ -703,6 +1029,16 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "d3c942ca9526c137",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "automatic_shuttle_storage",
+        "tz": "",
+        "charset": "UTF8"
     },
     {
         "id": "c6f6f31fe67b3898",
